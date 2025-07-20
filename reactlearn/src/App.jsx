@@ -30,19 +30,17 @@ const getTitle = (title) => {
   return title;
 };
 
-const Search = () => {
-  return (
-    <div>
-      <label htmlFor="search">Search: </label>
-      <input id="search" type="text" />
-    </div>
-  );
-};
+const Search = () => (
+  <div>
+    <label htmlFor="search">Search: </label>
+    <input id="search" type="text" />
+  </div>
+);
 
 const List = () => {
   return (
     <ul>
-      {list.map(function (item) {
+      {list.map((item) => {
         return (
           <li key={item.objectID}>
             <span>
