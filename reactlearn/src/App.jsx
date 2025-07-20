@@ -30,6 +30,15 @@ function getTitle(title) {
   return title;
 }
 
+function Search() {
+  return (
+    <div>
+      <label htmlFor="search">Search: </label>
+      <input id="search" type="text" />
+    </div>
+  );
+}
+
 function List() {
   return (
     <ul>
@@ -55,10 +64,7 @@ function App() {
   return (
     <div>
       <h1>My Orky Waaagh Stories</h1>
-
-      <label htmlFor="search">Search: </label>
-      <input id="search" type="text" />
-
+      <Search />
       <hr />
 
       <List />
