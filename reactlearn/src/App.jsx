@@ -26,20 +26,20 @@ const list = [
   },
 ];
 
-function getTitle(title) {
+const getTitle = (title) => {
   return title;
-}
+};
 
-function Search() {
+const Search = () => {
   return (
     <div>
       <label htmlFor="search">Search: </label>
       <input id="search" type="text" />
     </div>
   );
-}
+};
 
-function List() {
+const List = () => {
   return (
     <ul>
       {list.map(function (item) {
@@ -56,9 +56,9 @@ function List() {
       })}
     </ul>
   );
-}
+};
 
-function App() {
+const App = () => {
   // you can do calculations and stuff here
   const title = "React!";
   return (
@@ -70,6 +70,6 @@ function App() {
       <List />
     </div>
   );
-}
+};
 
 export default App;
