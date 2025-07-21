@@ -7,25 +7,6 @@ const welcome = {
 };
 */
 
-const list = [
-  {
-    title: "React",
-    url: "https://react.dev",
-    author: "Ghazghkull",
-    num_comments: 3,
-    points: 4,
-    objectID: 0,
-  },
-  {
-    title: "Redux",
-    url: "https://redux.js.org",
-    author: "Kaptain Badrukk",
-    num_comments: 5,
-    points: 5,
-    objectID: 1,
-  },
-];
-
 const getTitle = (title) => {
   return title;
 };
@@ -46,35 +27,53 @@ const Search = () => {
   );
 };
 
-const List = () => {
-  return (
-    <ul>
-      {list.map((item) => {
-        return (
-          <li key={item.objectID}>
-            <span>
-              <a href={item.url}>{item.title} </a>
-            </span>
-            <span>{item.author} </span>
-            <span>{item.num_comments} </span>
-            <span>{item.points} </span>
-          </li>
-        );
-      })}
-    </ul>
-  );
-};
+const List = (props) => (
+  <ul>
+    {props.list.map((item) => (
+      <Item key={item.objectID} item={item} />
+    ))}
+  </ul>
+);
+
+const Item = (props) => (
+  <li>
+    <span>
+      <a href={props.item.url}>{props.item.title}</a>
+    </span>
+    <span>{props.item.author}</span>
+    <span>{props.item.num_comments}</span>
+    <span>{props.item.points}</span>
+  </li>
+);
 
 const App = () => {
   // you can do calculations and stuff here
   const title = "React!";
+  const stories = [
+    {
+      title: "React",
+      url: "https://react.dev",
+      author: "Ghazghkull",
+      num_comments: 3,
+      points: 4,
+      objectID: 0,
+    },
+    {
+      title: "Redux",
+      url: "https://redux.js.org",
+      author: "Kaptain Badrukk",
+      num_comments: 5,
+      points: 5,
+      objectID: 1,
+    },
+  ];
   return (
     <div>
       <h1>My Orky Waaagh Stories</h1>
       <Search />
       <hr />
 
-      <List />
+      <List list={stories} />
     </div>
   );
 };
