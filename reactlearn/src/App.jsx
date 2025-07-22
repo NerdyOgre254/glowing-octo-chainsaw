@@ -13,9 +13,9 @@ const getTitle = (title) => {
 };
 
 const Search = () => {
-  let searchTerm = "";
+  const [searchTerm, setSearchTerm] = React.useState("");
   const handleChange = (event) => {
-    searchTerm = event.target.value;
+    setSearchTerm(event.target.value);
   };
 
   return (
