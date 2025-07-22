@@ -1,3 +1,4 @@
+import * as React from "react";
 import { useState } from "react";
 import "./App.css";
 /*
@@ -12,17 +13,19 @@ const getTitle = (title) => {
 };
 
 const Search = () => {
+  let searchTerm = "";
   const handleChange = (event) => {
-    //synthetic event
-    console.log(event);
-    //value of target here: input HTML element
-    console.log(event.target.value);
+    searchTerm = event.target.value;
   };
 
   return (
     <div>
       <label htmlFor="search">Search: </label>
       <input id="search" type="text" onChange={handleChange} />
+
+      <p>
+        Searching for <strong>{searchTerm}</strong>.
+      </p>
     </div>
   );
 };
