@@ -13,6 +13,7 @@ const getTitle = (title) => {
 };
 
 const Search = () => {
+  console.log("Search Renders");
   const [searchTerm, setSearchTerm] = React.useState("");
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -32,6 +33,7 @@ const Search = () => {
 
 const List = (props) => (
   <ul>
+    {console.log("List Renders")}
     {props.list.map((item) => (
       <Item key={item.objectID} item={item} />
     ))}
@@ -40,6 +42,7 @@ const List = (props) => (
 
 const Item = (props) => (
   <li>
+    {console.log("Item Renders")}
     <span>
       <a href={props.item.url}>{props.item.title} </a>
     </span>
@@ -52,6 +55,7 @@ const Item = (props) => (
 const App = () => {
   // you can do calculations and stuff here
   const title = "React!";
+  console.log("App Renders");
   const stories = [
     {
       title: "React",
